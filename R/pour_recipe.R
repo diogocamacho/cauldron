@@ -2,6 +2,8 @@
 #' 
 #' This functions will put all the TF-IDF matrices together, as well as a combined TF-IDF will all data sources.
 #' 
+#' @param pot_contents TF-IDF and cross-product vector for drug matrices, as computed with the \link{\code{mix_pot}} function
+#' @param menu_items Drugs metadata as obtained from the \link{\code{menu}} function
 #' @return A named list with TF-IDF, cross-product vectors, and drug metadata for all of the data sources used.
 pour_recipe <- function(pot_contents, menu_items) {
 
