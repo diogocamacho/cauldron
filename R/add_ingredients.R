@@ -1,3 +1,13 @@
+#' Add ingredients
+#'
+#' This function takes in data from multiple sources and generates a drug-term matrix as required by `DRUID`.
+#' 
+#' @param cmap_data Data from CMAP2 from the Harmonizome
+#' @param small_molecules Data from small molecules treatments on cell lines obtained from the Harmonizome
+#' @param ctd_data Data from CTD, filtered on mRNA effects from drugs
+#' @param np_data Data on MCF7 cell lines treated with natural products from traditional chinese medicine
+#' @param lincs_data Data from LINCS L1000 from the Harmonizome
+#' @return A list of TF-IDF matrices and respective cross-product vectors.
 add_ingredients <- function(cmap_data, 
                             small_molecules, 
                             ctd_data, 
