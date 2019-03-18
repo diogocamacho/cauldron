@@ -6,6 +6,11 @@
 \usage{
 pour_recipe(pot_contents, menu_items)
 }
+\arguments{
+\item{pot_contents}{TF-IDF and cross-product vector for drug matrices, as computed with the \link{\code{mix_pot}} function}
+
+\item{menu_items}{Drugs metadata as obtained from the \link{\code{menu}} function}
+}
 \value{
 A named list with TF-IDF, cross-product vectors, and drug metadata for all of the data sources used.
 }
