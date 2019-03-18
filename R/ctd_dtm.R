@@ -29,26 +29,10 @@ ctd_dtm <- function(ctd_data)
     
     M[i, which(colnames(M) %in% x1)] <- 1
     
-    # x3 <- subset(x2, drug_effect == "decreases expression")
-    # if(nrow(x3) != 0) {
-    #   y1 <- paste(x3$drug_target_ids, "down")
-    #   y2 <- which(colnames(D) %in% y1)
-    #   D[i, y2] <- 1
-    # }
-    # 
-    # x4 <- subset(x2, drug_effect == "increases expression")
-    # if(nrow(x4) != 0) {
-    #   z1 <- paste(x4$drug_target_ids, "up")
-    #   z2 <- which(colnames(U) %in% z1)
-    #   U[i, z2] <- 1
-    # }
   }
-  
-  # drug_matrix <- cbind(U, D)
-  
+
   tmp_df <- as_tibble(df[match(udrugs, df$drug_id), ]) %>%
     dplyr::select(., drug_name)
-  
   
   return(list(matrix = M, drug_names = tmp_df))
   
