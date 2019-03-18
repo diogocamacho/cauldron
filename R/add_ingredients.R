@@ -35,13 +35,13 @@ add_ingredients <- function(cmap_data,
   
   # CTD drug matrix
   message("Processing CTD data set...")
-  load(ctd_data)
+  # load(ctd_data)
   ctd_drugs <- ctd_dtm(drug_df)
   
   # GSE85871: Natural products tested against MCF7 breast cancer cell line
   # load("/Volumes/HOME/scripts/r/conddr/supplementary_data/GSE85871_differential_expression_02132018.RData")
   message("Processing natural products data set...")
-  load(np_data)
+  # load(np_data)
   np_dm <- geo_matrix(geo_data = dge_matrix,
                       drug_names = unique(drug_info$drug_name),
                       gene_ids = colnames(dge_matrix))

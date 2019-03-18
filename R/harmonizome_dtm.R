@@ -1,6 +1,6 @@
 harmonizome_dtm <- function(harmonizome_dataset) {
   
-  load(harmonizome_dataset)
+  # load(harmonizome_dataset)
   
   ds_up <- dataset$M
   ds_down <- dataset$M
