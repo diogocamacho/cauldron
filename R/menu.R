@@ -9,8 +9,8 @@ menu <- function(ingredients) {
   # all drug names
   load(cmap_instances)
   load(lincs_instances)
-  cmap_drugs <- cmap_instances
-  lincs_drugs <- lincs_instances
+  # cmap_drugs <- cmap_instances
+  # lincs_drugs <- lincs_instances
   
   sm_drugs <- ingredients$small_molecules$drug_names
   sm_drugs <- tolower(sapply(sm_drugs, function(x) strsplit(x, "_")[[1]][1]))
