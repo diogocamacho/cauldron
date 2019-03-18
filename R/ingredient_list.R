@@ -6,10 +6,10 @@ ingredient_list <- function(add_new = NULL) {
   
   if (!is.null(add_new)) stop("Not ready for that yet.")
   
-  cmap_data <- "data/CMAP2.RData"
-  ctd_data <- "data/CTD_mRNA-effects-human.Rdata"
-  lincs_data <- "data/LINCS_L1000.RData"
-  small_molecules <- "data/SmallMoleculePerturbations.RData"
+  cmap_data <- "data/cmap_dataset.RData"
+  ctd_data <- "data/ctd_dataset.RData"
+  lincs_data <- "data/lincs_dataset.RData"
+  small_molecules <- "data/small_molecules_dataset.RData"
   natural_products <- "data/GSE85871_natural_products.RData"
   
   return(list(cmap = cmap_data, 

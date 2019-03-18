@@ -20,31 +20,33 @@ add_ingredients <- function(cmap_data,
   
   # CMAP data (HARMONIZOME)
   message("Processing CMAP data set...")
-  cmap_dm <- harmonizome_dtm(cmap_data)
+  cmap_dm <- harmonizome_dtm(data_file = cmap_data)
   
   # LINCS data (HARMONIZOME)
   message("Processing LINCS L1000 data set...")
-  lincs_dm <- harmonizome_dtm(lincs_data)
+  lincs_dm <- harmonizome_dtm(data_file = lincs_data)
   
   # GEO PROFILES (HARMONIZOME)
   message("Processing GEO Small Molecules data set...")
-  small_dm <- harmonizome_dtm(small_molecules)
+  small_dm <- harmonizome_dtm(data_file = small_molecules)
   x <- grep("_homo", as.matrix(small_dm$drug_names))
   small_dm$matrix <- small_dm$matrix[x, ]
   small_dm$drug_names <- as.matrix(small_dm$drug_names)[x]
   
   # CTD drug matrix
   message("Processing CTD data set...")
-  # load(ctd_data)
-  ctd_drugs <- ctd_dtm(drug_df)
+  load(ctd_data)
+  ctd_drugs <- ctd_dtm(ctd_dataset)
+  rownames(ctd_drugs$matrix) <- seq(1, nrow(ctd_drugs$matrix))
   
   # GSE85871: Natural products tested against MCF7 breast cancer cell line
   # load("/Volumes/HOME/scripts/r/conddr/supplementary_data/GSE85871_differential_expression_02132018.RData")
   message("Processing natural products data set...")
-  # load(np_data)
+  load(np_data)
   np_dm <- geo_matrix(geo_data = dge_matrix,
                       drug_names = unique(drug_info$drug_name),
                       gene_ids = colnames(dge_matrix))
+  rownames(np_dm$matrix) <- seq(1, nrow(np_dm$matrix))
   
   bowls <- list(cmap = cmap_dm,
                 lincs = lincs_dm,

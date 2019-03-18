@@ -7,8 +7,8 @@ menu <- function(ingredients) {
 
   ### DRUG NAMES 
   # all drug names
-  # load("data/cmap_instances")
-  # load("data/lincs_instances")
+  load("data/cmap_instances.RData")
+  load("data/lincs_instances.RData")
   # cmap_drugs <- cmap_instances
   # lincs_drugs <- lincs_instances
   
