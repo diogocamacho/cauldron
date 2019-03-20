@@ -45,18 +45,18 @@ ctfidf <- function(data_matrix)
   x2 <- tfidf2 %>% dplyr::arrange(., column)
   x3 <- x1$tf_idf * x2$tf_idf
   
-  ctfidf <- matrix(0, nrow = nrow(data_matrix), ncol = ncol(data_matrix))
+  M <- matrix(0, nrow = nrow(data_matrix), ncol = ncol(data_matrix))
   for (i in seq(1, nrow(data_matrix))) {
     b1 <- which(x1$row == rownames(data_matrix)[i])
     b2 <- match(x1$column[b1], colnames(data_matrix))
-    ctfidf[i, b2] <- x3[b1]
+    M[i, b2] <- x3[b1]
   }
-  rownames(ctfidf) <- rownames(data_matrix)
-  colnames(ctfidf) <- colnames(data_matrix)
+  rownames(M) <- rownames(data_matrix)
+  colnames(M) <- colnames(data_matrix)
   
   # make sparse matrix ----
-  ctfidf <- Matrix::Matrix(ctfidf, sparse = TRUE)
+  M <- Matrix::Matrix(M, sparse = TRUE)
 
-  return(ctfidf)
+  return(M)
 
 }
