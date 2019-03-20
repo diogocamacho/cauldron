@@ -1,6 +1,6 @@
 Package: cauldron
 Title: Cauldron: making data for DRUID
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: person("Diogo", "Camacho", email = "diogo.camacho@wyss.harvard.edu", role = c("aut", "cre"))
 Description: This is a companion package to DRUID that allows one to generate large compendia of drug profiles.
 License: GPL-3 + file LICENSE
