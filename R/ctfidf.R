@@ -12,7 +12,7 @@ ctfidf <- function(data_matrix)
 {
   # tidy data ----
   dtm1 <- tidytext::tidy(data_matrix)
-  dtm2 <- tidytext::tidy(t(data_matrix))
+  dtm2 <- tidytext::tidy(Matrix::t(data_matrix))
   
   # count words in both dtms ----
   words1 <- dtm1 %>% 
