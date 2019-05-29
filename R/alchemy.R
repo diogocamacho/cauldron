@@ -18,15 +18,17 @@ alchemy <- function(add_new = NULL) {
                         lincs_data = shelves$lincs, 
                         np_data = shelves$natural_products)
   
-  message("Mix the pot...")
-  soup <- mix_pot(bowls)
-  
   message("Write the menu...")
   menu_items <- menu(bowls)
   
+  message("Wash ingredients...")
+  washed_off <- rinse(bowl_list = bowls, menu = menu_items)
+
+  message("Mix the pot...")
+  soup <- mix_pot(washed_off)
+    
   message("Pour recipe...")
   druid_potion <- pour_recipe(pot_contents = soup, menu_items = menu_items)
   
   save(file = "data/druid_potion.RData", druid_potion)
-  # return(druid_potion)
 }
