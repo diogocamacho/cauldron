@@ -14,7 +14,7 @@ ctd_dtm <- function(ctd_data)
   M <- cbind(U, D)
   
   df <- ctd_data %>% 
-    as_data_frame %>% 
+    as_tibble %>% 
     dplyr::select(., drug_id, drug_name, drug_target_ids, drug_effect) %>% 
     dplyr::mutate(., direction = "up") %>% 
     dplyr::mutate(., direction = replace(x = direction, list = drug_effect == "decreases expression", values = "down")) %>% 
