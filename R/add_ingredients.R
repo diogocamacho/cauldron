@@ -32,13 +32,13 @@ add_ingredients <- function(cmap_data,
   x <- grep("_homo", as.matrix(small_dm$drug_names))
   small_dm$matrix <- small_dm$matrix[x, ]
   small_dm$drug_names <- as.matrix(small_dm$drug_names)[x]
-  
+
   # CTD drug matrix
   message("Processing CTD data set...")
   load(ctd_data)
   ctd_drugs <- ctd_dtm(ctd_dataset)
   rownames(ctd_drugs$matrix) <- seq(1, nrow(ctd_drugs$matrix))
-  
+
   # GSE85871: Natural products tested against MCF7 breast cancer cell line
   # load("/Volumes/HOME/scripts/r/conddr/supplementary_data/GSE85871_differential_expression_02132018.RData")
   message("Processing natural products data set...")
