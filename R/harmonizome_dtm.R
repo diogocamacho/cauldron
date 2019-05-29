@@ -23,6 +23,6 @@ harmonizome_dtm <- function(data_file) {
   ds <- t(ds)
   colnames(ds) <- c(gup, gdown)
   
-  return(list(matrix = ds, drug_names = as_tibble(xx$S)))
+  return(list(matrix = ds, drug_names = tibble::enframe(xx$S) %>% dplyr::select(., value)))
 }
 
