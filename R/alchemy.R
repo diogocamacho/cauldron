@@ -28,7 +28,7 @@ alchemy <- function(add_new = NULL) {
   soup <- mix_pot(washed_off)
     
   message("Pour recipe...")
-  druid_potion <- pour_recipe(pot_contents = soup, menu_items = menu_items)
+  druid_potion <- pour_recipe(pot_contents = soup, menu_items = washed_off)
   
   save(file = "data/druid_potion.RData", druid_potion)
 }
