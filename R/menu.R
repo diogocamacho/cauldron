@@ -50,7 +50,7 @@ menu <- function(ingredients) {
                              vendor = NA)
   
   ctd_drugs <- tibble::tibble(id = NA,
-                              name = ingredients$ctd$drug_names,
+                              name = as.vector(as.matrix(ingredients$ctd$drug_names)),
                               concentration = NA,
                               duration = NA,
                               cell_line = NA,
